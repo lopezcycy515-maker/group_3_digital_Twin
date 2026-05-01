@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Digital Twins — AI Personas Portal',
-  description: 'Chat with AI-powered digital twins of Artemis ECA and Alex Chen',
+  title: 'Group 3 Digital Twin',
+  description: 'Chat with the AI-powered Digital Twin of Group 3 — IT students',
   viewport: 'width=device-width, initial-scale=1.0',
 };
 

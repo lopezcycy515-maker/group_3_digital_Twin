@@ -376,7 +376,7 @@ export default function ArtemisChatPage() {
                     }
                   }
                 }}
-                placeholder="Ask Artemis anything…"
+                placeholder="Ask the Digital Twin of Group 3 anything…"
                 rows={1}
                 className="flex-1 resize-none rounded-btn border border-purple-500/25 bg-paper px-3 md:px-4 py-2 md:py-3 text-sm font-light text-ink outline-none transition-all duration-150 placeholder:text-ink-3 hover:border-purple-500/40 focus:border-accent focus:shadow-input shadow-sm"
                 style={{
@@ -397,7 +397,7 @@ export default function ArtemisChatPage() {
             </div>
 
             <div className="max-w-chat mx-auto mt-2 text-center text-xs text-ink-3">
-              Artemis ECA Digital Twin · Your community assistant
+  Group 3 Digital Twin · Powered by OpenRouter AI
             </div>
           </div>
         )}

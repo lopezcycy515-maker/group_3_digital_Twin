@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
     const finalSystemPrompt = systemPrompt || PERSONA;
 
     const response = await getOpenRouter().chat.completions.create({
-      model: 'anthropic/claude-3-haiku',
+      model: 'meta-llama/llama-3.1-8b-instruct:free',
       max_tokens: MAX_RESPONSE_TOKENS,
       messages: [
         { role: 'system', content: finalSystemPrompt },

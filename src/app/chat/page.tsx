@@ -14,7 +14,6 @@ import {
   ARTEMIS_INTRO_CARDS,
   ARTEMIS_PROFILE,
   ARTEMIS_SIDEBAR_SECTIONS,
-  ARTEMIS_MEMBERS,
 } from '@/lib/artemis-config';
 
 export default function ArtemisChatPage() {
@@ -24,7 +23,21 @@ export default function ArtemisChatPage() {
   const [inputValue, setInputValue] = useState('');
   const [activeSection, setActiveSection] = useState('chat');
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [members, setMembers] = useState<{ id: number; name: string; email: string }[]>([]);
+  const [membersLoading, setMembersLoading] = useState(false);
   const chatScrollRef = useRef<HTMLDivElement>(null);
+
+  // Fetch members from DB when Members tab is opened
+  useEffect(() => {
+    if (activeSection === 'members' && members.length === 0) {
+      setMembersLoading(true);
+      fetch('/api/members')
+        .then((r) => r.json())
+        .then((data) => setMembers(data.members ?? []))
+        .catch(() => {})
+        .finally(() => setMembersLoading(false));
+    }
+  }, [activeSection, members.length]);
 
   // Auto-scroll to bottom
   useEffect(() => {
@@ -227,29 +240,33 @@ export default function ArtemisChatPage() {
             <div className="max-w-2xl mx-auto">
               <div className="mb-6">
                 <h2 className="gradient-text font-serif text-2xl font-bold mb-1">Group 3 Members</h2>
-                <p className="text-sm text-ink-3">11 members · IT Students</p>
+                <p className="text-sm text-ink-3">{members.length > 0 ? `${members.length} members` : 'IT Students'} · IT Students</p>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {ARTEMIS_MEMBERS.map((member, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center gap-3 rounded-card border border-purple-500/18 bg-paper p-4 hover:border-pink-500/30 hover:bg-gradient-to-br hover:from-purple-500/4 hover:to-pink-500/4 transition-all duration-150"
-                  >
-                    <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-pink-500 text-white text-sm font-bold">
-                      {member.name.charAt(0)}
+              {membersLoading ? (
+                <div className="flex items-center justify-center py-12 text-ink-3 text-sm">Loading members…</div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {members.map((member) => (
+                    <div
+                      key={member.id}
+                      className="flex items-center gap-3 rounded-card border border-purple-500/18 bg-paper p-4 hover:border-pink-500/30 hover:bg-gradient-to-br hover:from-purple-500/4 hover:to-pink-500/4 transition-all duration-150"
+                    >
+                      <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-pink-500 text-white text-sm font-bold">
+                        {member.name.charAt(0)}
+                      </div>
+                      <div className="min-w-0">
+                        <div className="text-sm font-medium text-ink truncate">{member.name}</div>
+                        <a
+                          href={`mailto:${member.email}`}
+                          className="text-xs text-ink-3 hover:text-accent transition-colors truncate block"
+                        >
+                          {member.email}
+                        </a>
+                      </div>
                     </div>
-                    <div className="min-w-0">
-                      <div className="text-sm font-medium text-ink truncate">{member.name}</div>
-                      <a
-                        href={`mailto:${member.email}`}
-                        className="text-xs text-ink-3 hover:text-accent transition-colors truncate block"
-                      >
-                        {member.email}
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         )}

@@ -32,6 +32,27 @@ export interface LeadRow {
   created_at: string;
 }
 
+export interface MemberRow {
+  id: number;
+  name: string;
+  email: string;
+  created_at: string;
+}
+
+const SEED_MEMBERS = [
+  { name: 'Engiemar Balanay', email: 'engiebalanay@gmail.com' },
+  { name: 'King Yohann Ilahn A. Tomas', email: 'yohanntomas2@gmail.com' },
+  { name: 'Justin Joeff Lacerona', email: 'laceronajustin83@gmail.com' },
+  { name: 'John Nino Miranda', email: 'miranda011406@gmail.com' },
+  { name: 'Vince Avena', email: 'vinceavena2@gmail.com' },
+  { name: 'Charles Andrew Bassig', email: 'charlesbassig20@gmail.com' },
+  { name: 'Ira Zenith Ginaia Alias', email: 'irazenithalias@gmail.com' },
+  { name: 'Cyrene Joy Lopez', email: 'lopezcycy515@gmail.com' },
+  { name: 'Lawrence Nizer Remudaro', email: 'nizerremudaro6@gmail.com' },
+  { name: 'Aaron Josh Pocot', email: 'aaronjoshpocot@gmail.com' },
+  { name: 'Reggie Lovett', email: 'reggielovett143@gmail.com' },
+];
+
 // Initialize tables (run once on cold start / migration)
 
 export async function initDb() {
@@ -58,6 +79,32 @@ export async function initDb() {
       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     )
   `;
+
+  await db`
+    CREATE TABLE IF NOT EXISTS members (
+      id SERIAL PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT NOT NULL UNIQUE,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    )
+  `;
+
+  const existing = await db`SELECT COUNT(*) as count FROM members`;
+  if (Number(existing[0].count) === 0) {
+    for (const m of SEED_MEMBERS) {
+      await db`
+        INSERT INTO members (name, email)
+        VALUES (${m.name}, ${m.email})
+        ON CONFLICT (email) DO NOTHING
+      `;
+    }
+  }
+}
+
+export async function getMembers() {
+  const db = getSql();
+  const rows = await db`SELECT * FROM members ORDER BY id ASC`;
+  return rows as MemberRow[];
 }
 
 // Database operations

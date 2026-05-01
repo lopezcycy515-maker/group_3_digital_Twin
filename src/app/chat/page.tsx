@@ -5,7 +5,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { MessageComponent, TypingIndicator } from '@/components/Message';
-import { CTASchedule, LeadForm } from '@/components/CTACards';
+import { LeadForm } from '@/components/CTACards';
 import { useChat } from '@/hooks/useChat';
 import { detectIntent } from '@/utils/helpers';
 import {
@@ -316,13 +316,7 @@ export default function ArtemisChatPage() {
                     idx === messages.length - 1 &&
                     showCTA
                   ) {
-                    if (lastIntent === 'schedule') {
-                      extraHTML = (
-                        <CTASchedule
-                          onClick={() => alert('Calendar integration coming soon!')}
-                        />
-                      );
-                    } else if (lastIntent === 'lead') {
+                    if (lastIntent === 'lead') {
                       extraHTML = (
                         <LeadForm
                           conversationId={conversationId}

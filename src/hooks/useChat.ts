@@ -17,7 +17,6 @@ export function useChat(options?: UseChatOptions) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const conversationId = useRef(options?.conversationId ?? generateId());
-  const systemPromptRef = useRef(options?.systemPrompt);
 
   const sendMessage = useCallback(async (content: string) => {
     if (!content.trim()) return;
@@ -50,7 +49,6 @@ export function useChat(options?: UseChatOptions) {
               role: msg.role,
               content: msg.content,
             })),
-          systemPrompt: systemPromptRef.current,
         }),
       });
 

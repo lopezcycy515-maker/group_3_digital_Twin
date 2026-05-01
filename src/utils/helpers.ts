@@ -3,11 +3,13 @@
 export function detectIntent(text: string): 'schedule' | 'lead' | 'general' {
   const lowerText = text.toLowerCase();
 
-  if (/schedul|call|meet|calendly|book|chat|calendar|availability/.test(lowerText)) {
+  // Word-boundary matching to avoid false positives
+  // (e.g., "chat" should not trigger "schedule")
+  if (/\b(schedule|scheduling|calendly|calendar|availability|book a call|set up a call|meeting|appointment)\b/.test(lowerText)) {
     return 'schedule';
   }
 
-  if (/contact|email|reach|touch|connect|information|details|follow|opportunity/.test(lowerText)) {
+  if (/\b(contact|email me|reach out|get in touch|opportunity|follow up|hire)\b/.test(lowerText)) {
     return 'lead';
   }
 

@@ -4,6 +4,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { validateEmail } from '@/utils/helpers';
 import { saveLead } from '@/lib/db';
+import { getClientIp, rateLimit } from '@/lib/rate-limit';
 
 interface LeadPayload {
   name: string;
@@ -13,13 +14,21 @@ interface LeadPayload {
   conversationId: string;
 }
 
+const FIELD_MAX = 200;
+
 export async function POST(request: NextRequest) {
   try {
-    // Note: Supabase integration would go here
-    // For now, this validates and returns success
-    // You would integrate with saveLead from @/lib/supabase when DB is ready
-    
-    const body = await request.json() as LeadPayload;
+    // 5 leads/min/IP — generous for a real submitter, blocks spammers
+    const ip = getClientIp(request);
+    const rl = rateLimit(`leads:${ip}`, 5, 60_000);
+    if (!rl.allowed) {
+      return NextResponse.json(
+        { error: 'Too many submissions. Please try again later.' },
+        { status: 429 },
+      );
+    }
+
+    const body = (await request.json()) as LeadPayload;
     const { name, email, company, role, conversationId } = body;
 
     // Validation
@@ -40,6 +49,20 @@ export async function POST(request: NextRequest) {
     if (!conversationId || !conversationId.trim()) {
       return NextResponse.json(
         { error: 'Conversation ID is required' },
+        { status: 400 },
+      );
+    }
+
+    // Length caps to prevent oversized payloads
+    if (
+      name.length > FIELD_MAX ||
+      email.length > FIELD_MAX ||
+      (company?.length ?? 0) > FIELD_MAX ||
+      (role?.length ?? 0) > FIELD_MAX ||
+      conversationId.length > FIELD_MAX
+    ) {
+      return NextResponse.json(
+        { error: `Field too long (max ${FIELD_MAX} chars).` },
         { status: 400 },
       );
     }

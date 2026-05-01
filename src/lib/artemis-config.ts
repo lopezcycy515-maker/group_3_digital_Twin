@@ -99,9 +99,6 @@ export const ARTEMIS_PROFILE = {
 
 export const ARTEMIS_SIDEBAR_SECTIONS = [
   { id: 'chat', label: 'Chat', icon: 'chat' },
-  { id: 'about', label: 'About', icon: 'about' },
-  { id: 'events', label: 'Events', icon: 'events' },
-  { id: 'projects', label: 'Projects', icon: 'projects' },
   { id: 'members', label: 'Members', icon: 'members' },
 ];
 

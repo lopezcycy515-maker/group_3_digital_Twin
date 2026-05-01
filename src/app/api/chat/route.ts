@@ -10,7 +10,7 @@ interface MessageParam {
 }
 
 const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
-const MODEL = 'mistralai/mistral-7b-instruct:free';
+const MODEL = 'openrouter/free';
 
 export async function POST(request: NextRequest) {
   try {

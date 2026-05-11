@@ -1,5 +1,5 @@
 # Product Requirements Document (PRD)
-## Digital Twin – Reggie Lovett AI System
+## Artemis – Reggie Lovett AI System
 
 **Version:** 1.0  
 **Date:** April 2026  
@@ -12,7 +12,7 @@
 
 ### 1.1 Purpose
 
-The Digital Twin system is an AI-powered simulation of Reggie Lovett, a BSIT 2 student with expertise spanning multiple programming languages and technologies. The system intelligently represents his academic knowledge, professional experiences, technical skills, and communication patterns.
+The Artemis system is an AI-powered simulation of Reggie Lovett, a BSIT 2 student with expertise spanning multiple programming languages and technologies. The system intelligently represents his academic knowledge, professional experiences, technical skills, and communication patterns.
 
 ### 1.2 Scope
 
@@ -30,7 +30,7 @@ The system will:
 - **For Reggie:** Enhanced portfolio demonstration, professional networking asset, interview preparation tool
 - **For Employers:** Quick, interactive assessment of technical and soft skills
 - **For Academia:** Showcase of AI capability in education and knowledge representation
-- **For AI Community:** Reference implementation of AI digital twin architecture
+- **For AI Community:** Reference implementation of AI digital representation architecture
 
 ### 1.4 Success Metrics
 
@@ -211,7 +211,7 @@ The following are NOT supported in this version:
 - Integration with external social media or professional networks
 - Email or calendar functionality
 - Voice or video responses
-- Personalization for multiple digital twins
+- Personalization for multiple Artemis instances
 
 ---
 
@@ -388,7 +388,7 @@ The system requires structured data about Reggie Lovett including:
 
 The project is considered successful when:
 
-1. The digital twin answers technical questions accurately and consistently
+1. Artemis answers technical questions accurately and consistently
 2. All deployment and performance benchmarks are met
 3. User feedback indicates 4.5+/5 satisfaction
 4. Security audit passes with zero critical findings

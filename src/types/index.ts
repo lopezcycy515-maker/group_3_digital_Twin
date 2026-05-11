@@ -1,4 +1,4 @@
-// Types for the digital twin application
+// Types for the Artemis application
 
 export interface Message {
   id: string;

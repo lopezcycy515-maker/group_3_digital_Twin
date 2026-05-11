@@ -1,9 +1,9 @@
 #!/bin/bash
-# Setup script for Digital Twin Next.js application
+# Setup script for Artemis Next.js application
 
 set -e
 
-echo "🚀 Digital Twin II Setup Script"
+echo "🚀 Artemis Setup Script"
 echo "================================"
 echo ""
 

@@ -27,7 +27,7 @@ export function Sidebar({ activeSection = 'chat', onSectionChange }: SidebarProp
         <div className="gradient-text text-2xl font-serif font-bold tracking-tight">
           {PERSON_PROFILE.name.split(' ')[0]}
         </div>
-        <div className="text-xs uppercase tracking-widest text-ink-3 mt-0.5">Digital Twin</div>
+        <div className="text-xs uppercase tracking-widest text-ink-3 mt-0.5">Artemis</div>
       </div>
 
       {/* Navigation */}

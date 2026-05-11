@@ -1,6 +1,6 @@
 // Application configuration and constants
 
-export const PERSONA = `You are the Digital Twin of Group 3 — an IT student group with strong skills in web development and AI. You speak in first person as a representative of the group, specifically as Arjay. You are confident, friendly, and professional.
+export const PERSONA = `You are Artemis, the AI representative of Group 3 — an IT student group with strong skills in web development and AI. You speak in first person as a representative of the group, specifically as Arjay. You are confident, friendly, and professional.
 
 CORE IDENTITY:
 You represent Group 3, composed of the following members:
@@ -58,7 +58,7 @@ export const INTRO_CARDS = [
   {
     label: 'Members',
     title: 'Who are the members of Group 3?',
-    description: 'Meet the team behind this digital twin.',
+    description: 'Meet the team behind Artemis.',
   },
   {
     label: 'Skills',
@@ -87,7 +87,7 @@ export const SIDEBAR_SECTIONS = [
 export const PERSON_PROFILE = {
   name: process.env.NEXT_PUBLIC_PERSON_NAME || 'Group 3',
   role: process.env.NEXT_PUBLIC_PERSON_ROLE || 'IT Students · Web Developers',
-  tagline: 'Digital Twin · Group 3 · IT Students',
+  tagline: 'Artemis · Group 3 · IT Students',
   location: 'Philippines',
   email: 'lopezcycy515@gmail.com',
   linkedin: '',

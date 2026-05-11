@@ -28,11 +28,11 @@ export default function ArtemisLanding() {
           </div>
 
           <h1 className="gradient-text font-serif text-4xl sm:text-5xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight">
-            Group 3 Digital Twin
+            Artemis
           </h1>
 
           <p className="text-lg md:text-xl text-ink-2 mb-3 md:mb-4 font-light leading-relaxed">
-            An AI-powered digital twin representing Group 3 — IT students building the future
+            An AI-powered voice representing Group 3 — IT students building the future
           </p>
 
           <p className="text-base md:text-lg text-ink-3 mb-8 md:mb-10 leading-relaxed">
@@ -43,7 +43,7 @@ export default function ArtemisLanding() {
             href="/chat"
             className="inline-block rounded-btn bg-gradient-to-r from-[#a855f7] to-[#ec4899] px-6 md:px-8 py-3 md:py-4 text-xs md:text-sm font-medium text-white shadow-lg transition-all hover:opacity-85 hover:shadow-xl active:scale-95"
           >
-            Chat with our Digital Twin →
+            Chat with Artemis →
           </Link>
         </div>
       </section>
@@ -88,7 +88,7 @@ export default function ArtemisLanding() {
               Want to learn more?
             </h2>
             <p className="text-base md:text-lg text-ink-2 mb-6 md:mb-8 leading-relaxed">
-              Chat with our Digital Twin to learn about Group 3, our skills, our portfolio, and how to become a full-stack developer.
+              Chat with Artemis to learn about Group 3, our skills, our portfolio, and how to become a full-stack developer.
             </p>
             <Link
               href="/chat"
@@ -102,7 +102,7 @@ export default function ArtemisLanding() {
 
       {/* Footer */}
       <footer className="border-t border-rule bg-paper/50 py-6 md:py-8 px-4 md:px-6 text-center text-xs md:text-sm text-ink-3">
-        <p>Group 3 Digital Twin · Powered by OpenRouter AI · Built with Next.js + Neon</p>
+        <p>Artemis · Group 3 · Powered by OpenRouter AI · Built with Next.js + Neon</p>
       </footer>
     </div>
   );

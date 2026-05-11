@@ -1,7 +1,7 @@
 {
-  "name": "digital-twin-nextjs",
+  "name": "artemis-group3",
   "version": "1.0.0",
-  "description": "AI-powered digital twin chat interface",
+  "description": "Artemis — AI-powered chat interface for Group 3",
   "private": true,
   "scripts": {
     "dev": "next dev",

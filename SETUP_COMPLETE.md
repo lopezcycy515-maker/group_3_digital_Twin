@@ -1,6 +1,6 @@
-# 🎯 Project Setup Complete: Digital Twin II (Next.js)
+# 🎯 Project Setup Complete: Artemis (Next.js)
 
-Your HTML digital twin application has been successfully converted to a production-ready Next.js project! Here's what was created.
+Your HTML application has been successfully converted to a production-ready Next.js project! Here's what was created.
 
 ## ✅ What's Been Done
 
@@ -46,7 +46,7 @@ Created 8 reusable components:
 
 ### 1. Install Dependencies
 ```bash
-cd Digital-twin2
+cd Artemis
 npm install
 ```
 
@@ -68,7 +68,7 @@ Visit: http://localhost:3000
 ## 📁 File Structure Guide
 
 ```
-Digital-twin2/
+Artemis/
 ├── src/
 │   ├── app/
 │   │   ├── api/

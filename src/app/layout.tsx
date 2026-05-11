@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Group 3 Digital Twin',
-  description: 'Chat with the AI-powered Digital Twin of Group 3 — IT students',
+  title: 'Artemis · Group 3',
+  description: 'Chat with Artemis — the AI-powered voice of Group 3, IT students',
   viewport: 'width=device-width, initial-scale=1.0',
 };
 

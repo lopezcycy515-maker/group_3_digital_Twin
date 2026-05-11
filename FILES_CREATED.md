@@ -72,7 +72,7 @@ This document lists all files created during the Next.js conversion.
 ## Directory Structure Created
 
 ```
-Digital-twin2/
+Artemis/
 ├── src/
 │   ├── app/
 │   │   ├── api/

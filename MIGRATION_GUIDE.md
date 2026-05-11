@@ -1,6 +1,6 @@
 # Migration Guide: HTML to Next.js
 
-This document outlines the conversion from a single-file HTML/CSS/JS digital twin to a production Next.js application.
+This document outlines the conversion from a single-file HTML/CSS/JS application to the production Next.js application (Artemis).
 
 ## What Changed
 
@@ -173,7 +173,7 @@ export const PERSONA = process.env.NEXT_PUBLIC_PERSONA
 
 Edit `src/lib/config.ts`:
 ```typescript
-export const PERSONA = `You are the digital twin of...`
+export const PERSONA = `You are Artemis, the AI representative of...`
 ```
 
 ### Change Colors
@@ -259,7 +259,7 @@ POST /api/leads
 ### Running Locally
 
 ```bash
-cd Digital-twin2
+cd Artemis
 npm install
 npm run dev
 # Visit http://localhost:3000

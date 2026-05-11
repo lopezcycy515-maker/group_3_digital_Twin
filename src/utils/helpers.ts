@@ -1,4 +1,4 @@
-// Utility functions for the digital twin application
+// Utility functions for the Artemis application
 
 export function detectIntent(text: string): 'schedule' | 'lead' | 'general' {
   const lowerText = text.toLowerCase();

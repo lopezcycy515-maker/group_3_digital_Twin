@@ -1,6 +1,6 @@
-# Digital Twin II - Next.js Web Application
+# Artemis - Next.js Web Application
 
-A full-stack Next.js application that creates an AI-powered digital twin interface. This application hosts a conversational AI persona that can interact with visitors, handle scheduling, and capture leads.
+A full-stack Next.js application that creates an AI-powered chat interface named Artemis. This application hosts a conversational AI persona that can interact with visitors, handle scheduling, and capture leads.
 
 ## 🎯 Project Overview
 
@@ -66,7 +66,7 @@ Configuration Files:
 
 1. **Clone and setup**
    ```bash
-   cd Digital-twin2
+   cd Artemis
    npm install
    ```
 
@@ -301,7 +301,7 @@ For issues or questions, check:
 
 ## 📄 License
 
-This project is part of the Digital Twin series. See LICENSE file for details.
+This project is part of the Artemis series. See LICENSE file for details.
 
 ---
 

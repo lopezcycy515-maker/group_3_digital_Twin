@@ -23,7 +23,7 @@ export function MessageComponent({ message, extraHTML }: MessageProps) {
 
       <div className={`flex flex-1 flex-col ${isUser ? 'items-end' : ''}`}>
         <div className="text-xs font-medium uppercase tracking-wider text-ink-3 mb-1">
-          {isUser ? 'You' : 'Digital Twin'}
+          {isUser ? 'You' : 'Artemis'}
         </div>
 
         <div className={`text-sm leading-relaxed ${isUser ? 'italic text-ink-2' : 'text-ink font-light'}`}>
@@ -59,7 +59,7 @@ export function TypingIndicator() {
 
       <div className="flex flex-col">
         <div className="text-xs font-medium uppercase tracking-wider text-ink-3 mb-1">
-          Digital Twin
+          Artemis
         </div>
 
         <div className="flex items-center gap-1 py-1.5">

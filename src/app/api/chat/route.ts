@@ -108,7 +108,7 @@ export async function POST(request: NextRequest) {
         Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
         'HTTP-Referer': process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-        'X-Title': 'Group 3 Digital Twin',
+        'X-Title': 'Artemis · Group 3',
       },
       body: JSON.stringify({
         model: MODEL,
